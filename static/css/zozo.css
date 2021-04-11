@@ -625,6 +625,50 @@ a.back_to_top:hover span {
   color: #555555;
 }
 
+.article-toc {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 110px;
+  font-size: 0.9em;
+  width: 300px;
+  margin-left: 400px;
+  padding-left: 20px;
+  overflow-y: auto;
+  line-height: 1.4em;
+  max-height: 85%;
+}
+.article-toc h3 {
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.article-toc ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  list-style: none;
+}
+
+.article-toc li {
+  list-style: none;
+  margin-left: 20px;
+  margin-top: 2px;
+}
+.article-toc li a {
+  color: #000;
+  text-decoration: none;
+}
+.article-toc li a.active {
+  font-weight: bold;
+}
+
 @media print, screen and (max-width: 680px) {
   .nav_container {
     position: relative;
@@ -668,6 +712,15 @@ a.back_to_top:hover span {
   .header,
   .content {
     width: 820px;
+  }
+  .article-toc {
+    margin-left: 500px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .article-toc {
+    display: block;
   }
 }
 

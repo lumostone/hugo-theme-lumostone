@@ -1,0 +1,20 @@
+prev_page:
+  other: "上一頁"
+
+next_page:
+  other: "閱讀更多文章"
+
+home:
+  other: "首頁"
+
+archive:
+  other: "過往文章"
+
+tags:
+  other: "標籤"
+
+about:
+  other: "關於"
+
+contents:
+  other: "內容"

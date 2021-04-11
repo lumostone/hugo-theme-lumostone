@@ -1,4 +1,4 @@
-{{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+{{ $paginator := .Paginate ( .Site.RegularPages ) }}
 {{ range $paginator.Pages }}
 <div class="post animated fadeInDown">
     <div class="post_title">
@@ -28,7 +28,7 @@
                 {{ end }}
             </div>
         </div>
-    </div>
+    </div>    
 </div>
 {{ end }}
 
