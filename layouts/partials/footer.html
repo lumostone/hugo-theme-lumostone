@@ -1,6 +1,8 @@
 <footer class="footer">
     <div class="powered_by">
-        <a href="https://github.com/lumostone/lumostone.github.io">Source code hosted on Github</a>
+        {{ range .Site.Params.footer }}
+        <a href="{{ .url }}">{{ .text }}</a>
+        {{ end }}
     </div>
 
     <div class="footer_slogan">
