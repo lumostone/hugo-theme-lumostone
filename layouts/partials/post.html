@@ -2,8 +2,14 @@
 {{ range $paginator.Pages }}
 <div class="post animated fadeInDown">
     <div class="post_title">
-        <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
+        <a href='{{ .RelPermalink }}'>
+            <h2>{{ .Title }}</h2>
+            {{ with .Params.Subtitle }}
+            <h3>{{ . }}</h3>
+            {{ end }}
+        </a>
     </div>
+    {{ partial "post-meta.html" . }}
     {{ if .Site.Params.enableSummary }}
     <div class="list">
         <div class="post_content markdown">
@@ -11,24 +17,7 @@
         </div>
     </div>
     {{ end }}
-    <div class="post_footer">
-        <div class="meta">
-            <div class="info">
-                <span class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">{{ .Date.Format "2006.01.02" }}</span>
-                </span>
-                {{ with .Params.tags }}
-                <span class="field tags">
-                    <i class="ri-stack-line"></i>
-                    {{ range . }}
-                    <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
-                    {{ end }}
-                </span>
-                {{ end }}
-            </div>
-        </div>
-    </div>    
+    <div class="post_footer"></div>   
 </div>
 {{ end }}
 
