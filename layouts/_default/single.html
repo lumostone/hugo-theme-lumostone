@@ -6,6 +6,7 @@
         {{ partial "header.html" . }}
         <div class="content">
             <div class="post_page">
+                {{ partial "translations.html" . }}
                 <div class="post animate__animated animate__fadeInDown">
                     <div class="post_title post_detail_title">
                         <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>

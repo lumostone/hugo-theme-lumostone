@@ -778,3 +778,26 @@ a.back_to_top:hover span {
 }
 
 /*animation ends*/
+
+.translations {
+  background-color: #eef5f6;
+  padding: 10px;
+  border:0.5px solid #8cbdc1;
+  border-radius: 5px;
+}
+
+.translations ul, ul li {
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
+
+.translations ul li a {
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: #5ba1a7;
+}
+  
+.translations ul li a:hover {
+  color: #7bdbdd;
+}
