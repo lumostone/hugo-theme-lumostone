@@ -206,13 +206,20 @@ hr {
   margin-top: 50px;
 }
 
-.post .post_title h2 {
+.post .post_title h2, .post .post_title h3 {
   letter-spacing: 1px;
   font-size: 1.4rem;
   line-height: 1;
   font-weight: 600;
   color: #1f1f1f;
   margin: 0 0 6px 0;
+}
+
+.post .post_title h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #8f8f8f;
+  margin: 10px 0 6px 0;
 }
 
 .post .post_title a {
@@ -260,6 +267,39 @@ hr {
 
 .post .post_content a:hover {
   color: #7bdbdd;
+}
+
+.post .post_meta {
+  padding: 10px 0;
+}
+
+.post .post_meta .meta {
+  max-width: 100%;
+  height: 25px;
+  color: #959595;
+}
+
+.post .post_meta .meta .info {
+  float: left;
+  font-size: 14px;
+}
+
+.post .post_meta .meta .info .date {
+  margin-right: 10px;
+}
+
+.post .post_meta .meta .field {
+  margin-right: 10px;
+}
+
+.post .post_meta .meta .tags a {
+  text-decoration: none;
+  color: #959595;
+  padding-right: 6px;
+}
+
+.post .post_meta .meta .tags a:hover {
+  color: #1f1f1f;
 }
 
 .post .post_footer {
