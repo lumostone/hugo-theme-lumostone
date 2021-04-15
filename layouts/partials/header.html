@@ -2,7 +2,7 @@
     <div class="site_title_container">
         <div class="site_title">
             <h1>
-                <a href="{{ .Site.BaseURL }}">
+                <a href="{{ .Site.BaseURL | relLangURL }}">
                     <span>{{ .Site.Title }}</span>
                 </a>
             </h1>
@@ -15,8 +15,10 @@
                 <a href="{{ $val }}" title="{{ $key }}" target="_blank"><i class="ri-{{ $key }}-fill"></i></a>
                 {{ end }}
                 {{ end }}
+                {{ if .Site.Params.enableRss }}
                 <a href="{{ .Site.RSSLink }}" type="application/rss+xml" title="rss" target="_blank"><i
                         class="ri-rss-fill"></i></a>
+                {{ end }}
             </div>
         </div>
     </div>

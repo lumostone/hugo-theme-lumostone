@@ -1,0 +1,17 @@
+{{ if .IsTranslated }}
+<section class="translations">
+    <span>{{ i18n "available_translations" }}</span>
+    <ul>
+        {{ $len := ( len .Translations ) }}
+        {{ range $index, $translation := .Translations }}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ $translation.Language.LanguageName }}</a>
+            {{ if lt (add $index 1) $len }}
+            <span> | </span>
+            {{ end }}
+        </li>
+        {{ end }}
+    </ul>
+</section>
+{{ end }}
+
