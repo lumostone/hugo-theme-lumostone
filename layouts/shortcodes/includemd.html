@@ -1,0 +1,2 @@
+{{ $file := .Get "file" }}
+{{ $file | relLangURL | path.Join "content/posts" | readFile | safeHTML }}
