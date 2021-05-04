@@ -1,2 +1,18 @@
-{{ $file := .Get "file" }}
-{{ $file | relLangURL | path.Join "content/posts" | readFile | safeHTML }}
+{{- $file := .Get "file" | relLangURL | path.Join "content/posts" -}}
+{{- $fileContent := (readFile $file) -}}
+
+{{- if .Get "toreplace" -}}
+
+    {{- $replaceTarget := .Get "toreplace" -}}
+
+    {{- with .Get "withtext" -}}
+    {{- replace $fileContent $replaceTarget . | safeHTML -}}
+    {{- end -}}
+
+    {{- with .Get "withfile" -}}
+    {{- . | relLangURL | path.Join "content/posts" | readFile | replace $fileContent $replaceTarget | safeHTML -}}
+    {{- end -}}
+
+{{- else -}}
+    {{- $file | readFile | safeHTML -}}
+{{- end -}}
