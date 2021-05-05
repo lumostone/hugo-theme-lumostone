@@ -1,4 +1,4 @@
-{{- $file := .Get "file" | relLangURL | path.Join "content/posts" -}}
+{{- $file := .Get "file" | path.Join (path.Dir .Page.File.Path) | relLangURL | path.Join "content" -}}
 {{- $fileContent := (readFile $file) -}}
 
 {{- if .Get "toreplace" -}}
@@ -10,7 +10,7 @@
     {{- end -}}
 
     {{- with .Get "withfile" -}}
-    {{- . | relLangURL | path.Join "content/posts" | readFile | replace $fileContent $replaceTarget | safeHTML -}}
+    {{- . | path.Join (path.Dir $.Page.File.Path) | relLangURL | path.Join "content" | readFile | replace $fileContent $replaceTarget | safeHTML -}}
     {{- end -}}
 
 {{- else -}}
