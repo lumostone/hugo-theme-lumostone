@@ -2,11 +2,11 @@
     {{ $toggleName := .Get "name" }}
     {{ $toggleNum := .Get "num" }}
     {{- if eq $toggleNum "1" -}}
-    <div class="toggle-pane fade show active" title="toggle-pane-{{ $toggleName }}" role="tabpanel" aria-labelledby="nav-{{ $toggleName }}">
+    <div class="toggle-pane active" title="toggle-pane-{{ $toggleName }}" role="tabpanel" aria-labelledby="nav-{{ $toggleName }}">
         {{- $.Inner | markdownify -}}
     </div>
     {{- else -}}
-    <div class="toggle-pane fade" title="toggle-pane-{{ $toggleName }}" role="tabpanel" aria-labelledby="nav-{{ $toggleName }}">
+    <div class="toggle-pane" title="toggle-pane-{{ $toggleName }}" role="tabpanel" aria-labelledby="nav-{{ $toggleName }}">
         {{- $.Inner | markdownify -}}
     </div>
     {{- end -}}
