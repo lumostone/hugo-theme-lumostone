@@ -2,16 +2,16 @@
     <ul role="tablist">
     {{ $tabTotal := .Get "tabTotal" }}
     {{- range $i, $sequence := (seq $tabTotal) -}}
-    {{ $tabName := (print "tabName" $sequence) }}
+    {{ $tabName := (print "tab" $sequence) }}
     {{- if eq $sequence 1 -}}
         <li>
-            <button class="nav-item active" title="tab-{{ $tabName }}" role="tab"
-                aria-controls="nav-home" aria-selected="true">{{- $.Get $tabName -}}</a>
+            <button class="nav-item active" title="tab-{{ $.Get $tabName }}" role="tab"
+                aria-controls="nav-home" aria-selected="true">{{ $.Get $tabName }}</a>
         </li>
     {{- else -}}
         <li>
-            <button class="nav-item" title="tab-{{ $tabName }}" role="tab"
-                aria-controls="nav-home" aria-selected="false">{{- $.Get $tabName -}}</a>
+            <button class="nav-item" title="tab-{{ $.Get $tabName }}" role="tab"
+                aria-controls="nav-home" aria-selected="false">{{ $.Get $tabName }}</a>
         </li>
     {{- end -}}
     {{- end -}}
