@@ -1,11 +1,11 @@
-{{ $tabName := .Get "name" }}
-{{ $tabNum := .Get "num" }}
+{{- $tabName := .Get "name" -}}
+{{- $tabNum := .Get "num" -}}
 {{- if eq $tabNum "1" -}}
-<div class="tab-pane active" title="tab-pane-{{ $tabName }}" role="tabpanel" aria-labelledby="nav-{{ $tabName }}">
+<div class="tab-pane active" title="tab-pane-{{- $tabName -}}" role="tabpanel" aria-labelledby="nav-{{- $tabName -}}">
     {{- $.Inner | markdownify -}}
 </div>
 {{- else -}}
-<div class="tab-pane" title="tab-pane-{{ $tabName }}" role="tabpanel" aria-labelledby="nav-{{ $tabName }}">
+<div class="tab-pane" title="tab-pane-{{- $tabName -}}" role="tabpanel" aria-labelledby="nav-{{- $tabName -}}">
     {{- $.Inner | markdownify -}}
 </div>
 {{- end -}}

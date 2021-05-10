@@ -1,12 +1,12 @@
 <section class="toggle-panel">
-    {{ $toggleName := .Get "name" }}
-    {{ $toggleNum := .Get "num" }}
+    {{- $toggleName := .Get "name" -}}
+    {{- $toggleNum := .Get "num" -}}
     {{- if eq $toggleNum "1" -}}
-    <div class="toggle-pane active" title="toggle-pane-{{ $toggleName }}" role="tabpanel" aria-labelledby="nav-{{ $toggleName }}">
+    <div class="toggle-pane active" title="toggle-pane-{{- $toggleName -}}" role="tabpanel" aria-labelledby="nav-{{- $toggleName -}}">
         {{- $.Inner | markdownify -}}
     </div>
     {{- else -}}
-    <div class="toggle-pane" title="toggle-pane-{{ $toggleName }}" role="tabpanel" aria-labelledby="nav-{{ $toggleName }}">
+    <div class="toggle-pane" title="toggle-pane-{{- $toggleName -}}" role="tabpanel" aria-labelledby="nav-{{- $toggleName -}}">
         {{- $.Inner | markdownify -}}
     </div>
     {{- end -}}
