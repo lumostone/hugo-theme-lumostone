@@ -1,0 +1,10 @@
+{{- $tabName := .Get "name" -}}
+{{- if eq (.Get "active") true -}}
+<div class="tab-pane active" title="tab-pane-{{- $tabName -}}" role="tabpanel" aria-labelledby="nav-{{- $tabName -}}">
+    {{- $.Inner | markdownify -}}
+</div>
+{{- else -}}
+<div class="tab-pane" title="tab-pane-{{- $tabName -}}" role="tabpanel" aria-labelledby="nav-{{- $tabName -}}">
+    {{- $.Inner | markdownify -}}
+</div>
+{{- end -}}

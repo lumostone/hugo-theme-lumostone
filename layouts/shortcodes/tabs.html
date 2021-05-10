@@ -1,0 +1,23 @@
+<nav class="nav-tabs" >
+    <ul role="tablist">
+    {{- $tabTotal := .Get "tabTotal" -}}
+    {{- range $i, $sequence := (seq $tabTotal) -}}
+    {{- $tabName := (print "tab" $sequence) -}}
+    {{- if eq ($.Get "active") $tabName -}}
+        <li>
+            <button class="nav-item active" title="tab-{{- $.Get $tabName -}}" role="tab"
+                aria-controls="nav-home" aria-selected="true">{{- $.Get $tabName -}}</a>
+        </li>
+    {{- else -}}
+        <li>
+            <button class="nav-item" title="tab-{{- $.Get $tabName -}}" role="tab"
+                aria-controls="nav-home" aria-selected="false">{{- $.Get $tabName -}}</a>
+        </li>
+    {{- end -}}
+    {{- end -}}
+    </ul>
+</nav>
+
+<section class="tab-content">
+{{- .Inner -}}
+</section>

@@ -1,0 +1,19 @@
+<div class="content-toggle" >
+    <ul role="tablist">
+    {{- $toggleTotal := .Get "toggleTotal" -}}
+    {{- range $i, $sequence := (seq $toggleTotal) -}}
+    {{- $toggleName := (print "toggle" $sequence) -}}
+    {{- if eq ($.Get "active") $toggleName -}}
+        <li>
+            <button class="toggle-item active" title="toggle-{{- $.Get $toggleName -}}" role="tab"
+                aria-controls="toggle-home" aria-selected="true">{{- $.Get $toggleName -}}</a>
+        </li>
+    {{- else -}}
+        <li>
+            <button class="toggle-item" title="toggle-{{- $.Get $toggleName -}}" role="button"
+                aria-controls="toggle-home" aria-selected="false">{{- $.Get $toggleName -}}</a>
+        </li>
+    {{- end -}}
+    {{- end -}}
+    </ul>
+</div>
