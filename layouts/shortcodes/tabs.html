@@ -3,7 +3,7 @@
     {{- $tabTotal := .Get "tabTotal" -}}
     {{- range $i, $sequence := (seq $tabTotal) -}}
     {{- $tabName := (print "tab" $sequence) -}}
-    {{- if eq $sequence 1 -}}
+    {{- if eq ($.Get "active") $tabName -}}
         <li>
             <button class="nav-item active" title="tab-{{- $.Get $tabName -}}" role="tab"
                 aria-controls="nav-home" aria-selected="true">{{- $.Get $tabName -}}</a>

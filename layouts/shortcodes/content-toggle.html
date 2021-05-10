@@ -3,7 +3,7 @@
     {{- $toggleTotal := .Get "toggleTotal" -}}
     {{- range $i, $sequence := (seq $toggleTotal) -}}
     {{- $toggleName := (print "toggle" $sequence) -}}
-    {{- if eq $sequence 1 -}}
+    {{- if eq ($.Get "active") $toggleName -}}
         <li>
             <button class="toggle-item active" title="toggle-{{- $.Get $toggleName -}}" role="tab"
                 aria-controls="toggle-home" aria-selected="true">{{- $.Get $toggleName -}}</a>

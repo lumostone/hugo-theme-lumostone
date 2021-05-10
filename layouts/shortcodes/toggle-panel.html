@@ -1,7 +1,6 @@
 <section class="toggle-panel">
     {{- $toggleName := .Get "name" -}}
-    {{- $toggleNum := .Get "num" -}}
-    {{- if eq $toggleNum "1" -}}
+    {{- if eq (.Get "active") true -}}
     <div class="toggle-pane active" title="toggle-pane-{{- $toggleName -}}" role="tabpanel" aria-labelledby="nav-{{- $toggleName -}}">
         {{- $.Inner | markdownify -}}
     </div>
